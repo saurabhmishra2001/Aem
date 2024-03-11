@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .parent {
+      display: flex;
+      flex-direction: column; /* Changed to column for stacking items vertically */
+    }
+
+    .childA, .childB {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+    /* for fixed the size of image, title and arrow*/
+.image2{
+    width: 30%;
+}
+.mddle{
+    width: 60%;
+}
+.svgimage{
+    width: 10%;
+}
+    /* Media query for screens smaller than or equal to 768px (adjust the value as needed) */
+    @media (min-width: 768px) {
+        .childB {
+            gap: 20px;
+            display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      }
+    }
+
+    .childC, .childD {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .childE, .childF, .childG {
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .childE img, .childF img, .childG img {
+      max-width: 100%;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    /* Media query for screens smaller than or equal to 768px (adjust the value as needed) */
+    @media (max-width: 768px) {
+      .childE img, .childF img, .childG img {
+        margin-right: 0;
+      }
+    }
+
+    /* for see all details*/
+    .linkseeall{
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+    .linkseeall:hover .seeallarrow,
+     .linkseeall:active .seeallarrow{
+      transform: translateX(5px); /* Move the arrow to the right on hover and click */
+    }
+  </style>
+</head>
+<body>
+
+<div class="parent">
+  <div class="childA">
+    <div class="childC">Text for C</div>
+    <div class="childD">
+        <a class="linkseeall" href="#">
+        <span>See all details</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-icon seeallarrow" viewBox="0 0 16 16">
+            <path d="M1 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 8zm9.354-4.354a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 9H2.5a.5.5 0 0 1 0-1H13.293l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </a>
+    </div>
+  </div>
+
+  <div class="childB">
+    <div class="childE">
+      <img src="imageE.jpg" alt="Image for E">
+      <div>
+        <h3>Title for E</h3>
+        <p>Description for E</p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path d="M1 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 8zm9.354-4.354a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 9H2.5a.5.5 0 0 1 0-1H13.293l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </div>
+
+    <div class="childF">
+      <img  class= "image2"src="imageF.jpg" alt="Image for F">
+      <div class="mddle">
+        <h3>Title for F</h3>
+        <p>Description for F  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet id earum veniam hic! Aliquid, veritatis dolores repellat nemo officia officiis deleniti obcaecati aliquam eos, quas earum repudiandae optio placeat molestiae?</p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right svgimage" viewBox="0 0 16 16">
+        <path d="M1 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 8zm9.354-4.354a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 9H2.5a.5.5 0 0 1 0-1H13.293l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </div>
+
+    <div class="childG">
+      <img src="imageG.jpg" alt="Image for G">
+      <div>
+        <h3>Title for G</h3>
+        <p>Description for G Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quasi, quisquam iste voluptatem, illum adipisci perspiciatis soluta ipsam, modi laboriosam corporis accusantium alias! Libero itaque hic dolor, eligendi dolorum ratione?</p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path d="M1 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 8zm9.354-4.354a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 9H2.5a.5.5 0 0 1 0-1H13.293l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
